@@ -21,6 +21,9 @@ const Navigation = () => (
       <li>
         <Link to={ROUTES.ADMIN}>Admin</Link>
       </li>
+      <li>
+        <Link to={ROUTES.POST_LIST}>All Posts</Link>
+      </li>
     </ul>
   </div>
 );
