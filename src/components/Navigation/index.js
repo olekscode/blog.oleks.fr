@@ -11,7 +11,7 @@ const Navigation = () => (
         <Link to={ROUTES.LANDING}>All Posts</Link>
       </li>
       <li>
-        <Link to={WEBSITE}>About me</Link>
+        <a href={WEBSITE}>About me</a>
       </li>
     </ul>
   </div>
