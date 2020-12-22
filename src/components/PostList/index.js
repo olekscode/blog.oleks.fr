@@ -1,4 +1,7 @@
 import React from 'react';
+
+import './style.css';
+
 import { loadMetadataOfAllPosts } from '../Post';
 
 

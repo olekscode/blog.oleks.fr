@@ -1,206 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Roboto&display=swap');
+
+:root {
+  --page-width: 900px;
+  --post-font-family: 'Roboto', sans-serif;
+  --post-header-font-family: 'Merriweather Sans', sans-serif;
+  --post-font-size: 18px;
+}
 
 body {
-  max-width: 900px;
-  margin: 0 auto;
-  font-family: 'Roboto', sans-serif;
-  font-size: 17px;
-}
-
-header {
-  text-align: center;
-  text-transform: uppercase;
-  border-bottom: 1px solid lightgray;
-}
-
-header li {
-  display:inline;
-  padding: 15px;
-}
-
-header a {
-  color: gray;
-  text-decoration: none;
-}
-
-header a:hover {
-  color: black;
+  font-family: var(--post-font-family);
+  font-size: var(--post-font-size);
+  position: absolute;
+  margin: 0;
+  width: 100%;
 }
 
 article {
-  padding: 20px 0;
+  max-width: var(--page-width);
+  margin: 0 auto;
+  padding: 25px 0;
 }
 
-article h1, h2, h3, h4, h5, h6 {
-  font-family: 'Roboto Condensed', sans-serif;
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--post-header-font-family);
 }
 
-#list-of-posts {
-  list-style-type: none;
-  padding: 0;
-  border-top: 1px solid lightgray;
+h1 {
+  margin-top: 80px;
 }
 
-#list-of-posts li {
-  border-bottom: 1px solid lightgray;
-  border-spacing: 0px;
-  border-collapse: collapse;
-  max-width: 900px;
+h2 {
+  border-bottom: 1px solid #ccc;
 }
 
-#list-of-posts a {
-  color: black;
-  text-decoration: none;
-  display: block;
-  padding: 10px;
+p {
+  line-height: 28px;   /* within paragraph */
+  margin-bottom: 31px; /* between paragraphs */
 }
-
-#list-of-posts a:hover {
-  background-color: whitesmoke;
-}
-
-#post-header {
-  margin-bottom: 30px;
-}
-
-#post-header h1 {
-  font-size: 30pt;
-  margin-bottom: 15px;
-}
-
-#author-info {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-#author-image-name-date > * {
-  vertical-align: middle;
-}
-
-#author-image {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-#author-image img {
-  height: 50px;
-  border-radius: 50%;
-}
-
-#author-name-date {
-  display: inline-block;
-}
-
-#author-name {
-  font-size: 15px;
-  margin-bottom: 5px;
-}
-
-#author-name a {
-  color: black;
-  text-decoration: none;
-}
-
-#author-name a:hover {
-  text-decoration: underline;
-}
-
-#date-published {
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.54);
-  font-family: Open Sans,sans-serif;
-  font-weight: 300;
-}
-
-#social-media-icons svg {
-  width: 24px;
-  height: 24px;
-  fill: darkgray;
-  margin-left: 8px;
-}
-
-#social-media-icons svg:hover {
-  fill: black;
-}
-
-#post {
-  font-family: Open Sans,sans-serif;
-  font-size: 17px;
-  line-height: 1.5;
-  text-align: justify;
-  text-justify: inter-word;
-}
-
-/* #post a {
-  background-color: rgba(187, 239, 253, 0.3);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  color: black;
-  text-decoration: none;
-}
-
-#post a:hover {
-  background-color: #bbeffd;
-} */
-
-#post img {
-  max-width: 900px;
-}
-
-#post table {
-  border: 1px solid #ccc;
-  border-collapse: collapse;
-  margin: 30px auto;
-  padding:0;
-}
-
-#post table tr {
-  border: 1px solid #ddd;
-  padding: 5px;
-  background-color: white;
-}
-
-/* #post table tr:nth-child(2n) {
-  background-color: #f8f8f8;
-} */
-
-#post table th, table td {
-  padding: 10px;
-  border: 1px solid #ddd;
-}
-
-@media screen and (max-width: 600px) {
-  #post table {
-    border: 0;
-  }
-
-  #post table thead {
-    display: none;
-  }
-
-  #post table tr {
-    border-bottom: 2px solid #ddd;
-    display: block;
-    margin-bottom: 10px;
-  }
-
-  #post table td {
-    border-bottom: 1px dotted #ccc;
-    display: block;
-  }
-
-  #post table td:last-child {
-    border-bottom: 0;
-  }
-
-  #post table td:before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-  }
-}
-
-/* code[class*="language-"],
-pre[class*="language-"] {
-  font-size: 15px;
-} */

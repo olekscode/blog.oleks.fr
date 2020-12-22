@@ -8,10 +8,11 @@ import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
 import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import $ from "jquery";
 
-import PostHeader from '../PostHeader';
-import PostNotFoundPage from '../PostNotFound';
-
+import './style.css';
 import * as URLS from '../../constants/blogUrls';
+
+import PostHeader from './PostHeader';
+import PostNotFoundPage from '../PostNotFound';
 
 const getContentsOfFileFromURL = url => {
   var result = null;
