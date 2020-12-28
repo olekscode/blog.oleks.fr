@@ -10,21 +10,29 @@
 }
 
 #post table {
-  border: 1px solid #ccc;
+  border: 1px solid white;
   border-collapse: collapse;
   margin: 30px auto;
   padding:0;
 }
 
 #post table tr {
-  border: 1px solid #ddd;
   padding: 5px;
   background-color: white;
 }
 
-#post table th, table td {
+#post table th, #post table td {
   padding: 10px;
-  border: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+}
+
+#post table th {
+  font-weight: bold;
+  border-bottom: 2px solid #ccc;
+}
+
+#post table td:last-child, #post table th:last-child {
+  border-right: 0;
 }
 
 @media screen and (max-width: 600px) {
