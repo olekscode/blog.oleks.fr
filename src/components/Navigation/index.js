@@ -49,15 +49,13 @@ class Navigation extends React.Component {
           <a href={ROUTES.LANDING}>
             <img src={profilePicture} alt='' />
             <div id='navbar-landing-title'><p>Oleksandr's Blog</p></div>
+            <div id='navbar-landing-asciimoji'><p>ʕ·͡ᴥ·ʔ</p></div>
           </a>
         </div>
         <div id='navbar-navigation'>
           <ul>
             <li>
-              <Link to={ROUTES.LANDING}>Posts</Link>
-            </li>
-            <li>
-              <a href={MYSELF.WEBSITE}>Categories</a>
+              <Link to={ROUTES.LANDING}>Other Posts</Link>
             </li>
           </ul>
         </div>

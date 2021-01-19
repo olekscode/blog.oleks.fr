@@ -12,6 +12,7 @@ import './style.css';
 import * as URLS from '../../constants/blogUrls';
 
 import PostHeader from './PostHeader';
+import PostFooter from './PostFooter';
 import PostNotFoundPage from '../PostNotFound';
 
 const getContentsOfFileFromURL = url => {
@@ -87,6 +88,7 @@ class PostPage extends React.Component {
         <div id='post'>
           <ReactMarkdown plugins={[math,gfm]} renderers={renderers} children={markdown} />
         </div>
+        <PostFooter />
       </div>
     )
   }

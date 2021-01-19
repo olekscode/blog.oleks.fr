@@ -36,14 +36,15 @@
   border-radius: 50%;
 }
 
-#navbar-landing-title {
+#navbar-landing-title, #navbar-landing-asciimoji {
   display: inline-block;
   vertical-align: top;
   color: black;
   text-decoration: none;
   /* font-family: 'Cinzel Decorative', cursive; */
-  font-family: 'Spirax', cursive;
-  font-size: 25px;
+  /* font-family: 'Spirax', cursive; */
+  font-family: var(--post-header-font-family);
+  font-size: 22px;
 }
 
 #navbar-landing-title a {
@@ -53,6 +54,10 @@
 
 #navbar-landing-title a:hover {
   text-decoration: underline;
+}
+
+#navbar-landing-asciimoji {
+  padding-left: 12px;
 }
 
 #navbar-navigation {
