@@ -6,8 +6,16 @@ import { loadMetadataOfAllPosts } from '../Post';
 
 
 class PostListPage extends React.Component {
+  constructor(props) {
+    super(props);
+    this.isForDrafts = props.drafts ? true : false;
+  }
+
   render() {
-    const postsMetadata = loadMetadataOfAllPosts();
+    var postsMetadata = loadMetadataOfAllPosts();
+
+    postsMetadata = postsMetadata.filter(post =>
+      post.draft === this.isForDrafts);
 
     const posts = postsMetadata.map(post =>
       <li><a href={post.id}>{post.title}</a></li>
@@ -15,7 +23,7 @@ class PostListPage extends React.Component {
 
     return (
       <div>
-        <h1>My Stories</h1>
+        <h1>{this.isForDrafts ? 'Drafts' : 'My Posts'}</h1>
         <ul id="list-of-posts">{posts}</ul>
       </div>
     );

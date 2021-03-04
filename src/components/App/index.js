@@ -19,8 +19,11 @@ const App = () => (
       </header>
       <article>
         <Switch>
-          <Route exact path={'/:postId'} component={PostPage} />
           <Route exact path={ROUTES.LANDING} component={PostListPage} />
+					<Route exact path={ROUTES.DRAFT_LIST}>
+						<PostListPage drafts="true" />
+					</Route>
+					<Route exact path={'/:postId'} component={PostPage} />
         </Switch>
       </article>
 		</div>
