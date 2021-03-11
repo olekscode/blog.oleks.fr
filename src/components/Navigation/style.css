@@ -2,19 +2,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Spirax&display=swap');
 
 #navbar {
-  position: fixed;
   width: 100vw;
   height: 70px;
   background-color: white;
-  z-index: 1;
-  transition: 0.2s;
-  display: flex;
-}
-
-.floatingNav {
-  width: calc(100vh - 100px);
-  border-radius: 2px;
-  box-shadow: 0px 1px 10px #999;
 }
 
 #navbar-landing {

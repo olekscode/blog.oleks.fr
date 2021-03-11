@@ -9,42 +9,9 @@ import * as ROUTES from '../../constants/routes';
 import profilePicture from './img/profile.jpg';
 
 class Navigation extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isScrollOnTopOfThePage: true
-    };
-
-    // This binding is necessary to make `this` work in the callback
-    this.handleScroll = this.handleScroll.bind(this);
-  }
-
-  componentDidMount() {
-    window.addEventListener('scroll', this.handleScroll);
-  }
-
-  componentWillUnmount() {
-    window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  handleScroll(event) {
-    let scrollPosition = window.pageYOffset;
-
-    if (this.state.isScrollOnTopOfThePage && scrollPosition > 40) {
-      this.setState({
-        isScrollOnTopOfThePage: false
-      });
-    }
-    else if (!this.state.isScrollOnTopOfThePage && scrollPosition <= 40) {
-      this.setState({
-        isScrollOnTopOfThePage: true
-      });
-    }
-  }
-
   render() {
     return (
-      <div id='navbar' class={this.state.isScrollOnTopOfThePage ? 'notFloatingNav' : 'floatingNav'}>
+      <div id='navbar'>
         <div id="navbar-landing">
           <a href={ROUTES.LANDING}>
             <img src={profilePicture} alt='' />
