@@ -1,7 +1,7 @@
 import React from 'react';
 
 import './style.css';
-import arollaLogo from './img/arolla.jpg';
+import arollaLogo from './img/arolla.png';
 
 
 class PostFooter extends React.Component {

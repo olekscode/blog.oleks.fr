@@ -2,6 +2,7 @@
   padding-top: 50px;
   text-align: center;
   color: #878787;
+  background-color: var(--color-light-bg);
 }
 
 #post-footer p {

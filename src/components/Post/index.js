@@ -85,7 +85,7 @@ class PostPage extends React.Component {
     return(
       <div>
         <PostHeader title={metadata.title} date={metadata.datePublished} />
-        <div id='post'>
+        <div id='post-content' class='container'>
           <ReactMarkdown plugins={[math,gfm]} renderers={renderers} children={markdown} />
         </div>
         <PostFooter />

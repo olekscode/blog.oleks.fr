@@ -1,65 +1,93 @@
-#post {
+#post-content {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
   font-size: var(--post-font-size);
   line-height: 1.5;
   text-align: justify;
   text-justify: inter-word;
 }
 
-#post img {
+#post-content img {
   max-width: var(--page-width);
 }
 
-#post table {
+#post-content a {
+  color: var(--color-blue);
+  text-decoration: none;
+}
+
+#post-content a:hover {
+  text-decoration: underline;
+}
+
+#post-content h1, h2, h3, h4, h5, h6 {
+  /* color: var(--color-brown); */
+}
+
+#post-content h1 {
+  margin-top: 80px;
+}
+
+#post-content h2 {
+  /* border-bottom: 1px solid #ccc; */
+}
+
+#post-content p {
+  line-height: 28px;   /* within paragraph */
+  margin-bottom: 31px; /* between paragraphs */
+}
+
+#post-content table {
   border: 1px solid white;
   border-collapse: collapse;
   margin: 30px auto;
   padding:0;
 }
 
-#post table tr {
+#post-content table tr {
   padding: 5px;
   background-color: white;
 }
 
-#post table th, #post table td {
+#post-content table th, #post table td {
   padding: 10px;
   border-right: 1px solid #ddd;
 }
 
-#post table th {
+#post-content table th {
   font-weight: bold;
   border-bottom: 2px solid #ccc;
 }
 
-#post table td:last-child, #post table th:last-child {
+#post-content table td:last-child, #post-content table th:last-child {
   border-right: 0;
 }
 
 @media screen and (max-width: 600px) {
-  #post table {
+  #post-content table {
     border: 0;
   }
 
-  #post table thead {
+  #post-content table thead {
     display: none;
   }
 
-  #post table tr {
+  #post-content table tr {
     border-bottom: 2px solid #ddd;
     display: block;
     margin-bottom: 10px;
   }
 
-  #post table td {
+  #post-content table td {
     border-bottom: 1px dotted #ccc;
     display: block;
   }
 
-  #post table td:last-child {
+  #post-content table td:last-child {
     border-bottom: 0;
   }
 
-  #post table td:before {
+  #post-content table td:before {
     content: attr(data-label);
     float: left;
     font-weight: bold;

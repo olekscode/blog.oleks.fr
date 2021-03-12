@@ -2,19 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Spirax&display=swap');
 
 #navbar {
-  width: 100vw;
   height: 70px;
-  background-color: white;
+  background-color: var(--color-light-bg);
 }
 
-#navbar-landing {
-  padding-left: 15px;
-}
-
-#navbar-landing a {
-  display: inline-block;
-  width: 100%;
-  height: 100%;
+#navbar .container {
+  display: flex;
+  padding: 2rem 1rem;
 }
 
 #navbar-landing img {
@@ -26,35 +20,18 @@
   border-radius: 50%;
 }
 
-#navbar-landing-title, #navbar-landing-asciimoji {
+#navbar-landing-title {
   display: inline-block;
   vertical-align: top;
   color: black;
-  text-decoration: none;
-  /* font-family: 'Cinzel Decorative', cursive; */
-  /* font-family: 'Spirax', cursive; */
   font-family: var(--post-header-font-family);
   font-size: 22px;
 }
 
-#navbar-landing-title a {
-  color: black;
-  text-decoration: none;
-}
-
-#navbar-landing-title a:hover {
-  text-decoration: underline;
-}
-
-#navbar-landing-asciimoji {
-  padding-left: 12px;
-}
-
 #navbar-navigation {
-  position: absolute;
-  right: 20px;
-  top: 5px;
-  height: 100%;
+  width: 70%;
+  text-align: right;
+  font-size: 16px;
 }
 
 #navbar-navigation li {
@@ -63,12 +40,8 @@
 }
 
 #navbar-navigation a {
-  padding: 15px;
-  border-radius: 10px;
+  padding: 0 15px;
+  text-transform: uppercase;
   color: black;
   text-decoration: none;
-}
-
-#navbar-navigation a:hover {
-  background-color: #F0F0F0;
 }

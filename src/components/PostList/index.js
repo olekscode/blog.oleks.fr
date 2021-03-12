@@ -22,9 +22,9 @@ class PostListPage extends React.Component {
     );
 
     return (
-      <div>
+      <div class='container'>
         <h1>{this.isForDrafts ? 'Drafts' : 'My Posts'}</h1>
-        <ul id="list-of-posts">{posts}</ul>
+        <ul id='list-of-posts'>{posts}</ul>
       </div>
     );
   }
