@@ -1,47 +1,47 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Spirax&display=swap');
 
-#navbar {
-  height: 70px;
+header {
   background-color: var(--color-light-bg);
 }
 
-#navbar .container {
-  display: flex;
-  padding: 2rem 1rem;
+#navbar ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
-#navbar-landing img {
-  display: inline;
+#navbar li {
+  float: right;
+}
+
+#navbar a {
+  display: block;
+  padding: 20px;
+  margin: 15px 0px;
+  color: black;
+  font-size: 16px;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+#navbar-title a {
+  padding: 0;
+}
+
+#navbar-title img {
+  display: inline-block;
   margin: 0 17px;
-  padding-top: 10px;
-  padding-bottom: 10px;
   height: 50px;
   border-radius: 50%;
 }
 
-#navbar-landing-title {
+#navbar-title p {
   display: inline-block;
   vertical-align: top;
   color: black;
   font-family: var(--post-header-font-family);
-  font-size: 22px;
-}
-
-#navbar-navigation {
-  width: 70%;
-  text-align: right;
-  font-size: 16px;
-}
-
-#navbar-navigation li {
-  display: inline;
-  padding-top: 10px;
-}
-
-#navbar-navigation a {
-  padding: 0 15px;
-  text-transform: uppercase;
-  color: black;
-  text-decoration: none;
+  font-size: 18px;
 }

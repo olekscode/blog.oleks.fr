@@ -6,7 +6,8 @@
   --post-font-family: 'Roboto', sans-serif;
   --post-header-font-family: 'Merriweather Sans', sans-serif;
   --post-font-size: 18px;
-  --color-light-bg: #FCFAF8;
+  /* --color-light-bg: #FCFAF8; */
+  --color-light-bg: #F2EBE6;
   --color-blue: #3897D3;
   --color-brown: #4C2E20;
 }

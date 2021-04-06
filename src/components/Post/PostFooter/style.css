@@ -1,8 +1,8 @@
 #post-footer {
-  padding-top: 50px;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
   text-align: center;
   color: #878787;
-  background-color: var(--color-light-bg);
 }
 
 #post-footer p {
