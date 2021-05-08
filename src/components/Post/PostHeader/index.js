@@ -12,11 +12,11 @@ class PostHeader extends React.Component {
 
   render() {
     return (
-      <div id='post-header' class='tc'>
+      <div id='post-header'>
         <div class='container'>
           <h1>{this.title}</h1>
           <div id='date-published'>{this.date} &#9472; 5 min read</div>
-          <hr id='header-line'></hr>
+          <hr/>
         </div>
       </div>
     );

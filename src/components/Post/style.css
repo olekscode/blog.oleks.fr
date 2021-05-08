@@ -1,14 +1,10 @@
 #post-content {
-  margin-top: 4rem;
   margin-bottom: 4rem;
   font-size: var(--post-font-size);
-  line-height: 1.5;
-  text-align: justify;
-  text-justify: inter-word;
 }
 
 #post-content img {
-  max-width: var(--page-width);
+  max-width: 100%;
 }
 
 #post-content a {
@@ -33,7 +29,6 @@
 }
 
 #post-content p {
-  line-height: 28px;   /* within paragraph */
   margin-bottom: 31px; /* between paragraphs */
 }
 

@@ -1,11 +1,11 @@
 #post-header {
-  margin: 0 -1rem;
-  padding: 1rem 1rem 1.5rem;
+  padding-bottom: .5rem;
   background-color: var(--color-light-bg);
 }
 
 #post-header h1 {
-  font-size: 30pt;
+  font-size: 35px;
+  margin: .3em 0;
 }
 
 #date-published {
@@ -14,9 +14,4 @@
   color: rgba(0, 0, 0, 0.54);
   font-weight: 300;
   font-style: italic;
-}
-
-#header-line {
-  width: 90px;
-  border: 2px solid var(--color-brown);
 }

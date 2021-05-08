@@ -1,13 +1,13 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
 :root {
   --page-width: 900px;
-  --post-font-family: 'Roboto', sans-serif;
-  --post-header-font-family: 'Merriweather Sans', sans-serif;
+  --post-font-family: 'PT Serif', serif;
+  --post-header-font-family: 'Noto Sans', sans-serif;
   --post-font-size: 18px;
   /* --color-light-bg: #FCFAF8; */
-  --color-light-bg: #F2EBE6;
+  /* --color-light-bg: #F2EBE6; */
+  --color-light-bg: white;
   --color-blue: #3897D3;
   --color-brown: #4C2E20;
 }
@@ -15,6 +15,9 @@
 body {
   font-family: var(--post-font-family);
   font-size: var(--post-font-size);
+  /* letter-spacing: .01em; */
+  line-height: 1.7;
+
   position: absolute;
   margin: 0;
   width: 100%;

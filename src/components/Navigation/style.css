@@ -1,47 +1,53 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative&family=Spirax&display=swap');
-
 header {
   background-color: var(--color-light-bg);
+  display: grid;
+  place-items: center;
 }
 
-#navbar ul {
+nav {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  height: 100px;
+  width: 90%;
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
+  text-transform: uppercase;
 }
 
-#navbar li {
-  float: right;
-}
-
-#navbar a {
+.menu-item {
   display: block;
-  padding: 20px;
-  margin: 15px 0px;
+  align-self: center;
+  padding: 1rem;
   color: black;
   font-size: 16px;
   text-align: center;
-  text-transform: uppercase;
   text-decoration: none;
 }
 
-#navbar-title a {
-  padding: 0;
+.menu-item:hover {
+  color: var(--color-brown);
 }
 
-#navbar-title img {
-  display: inline-block;
+.logo {
+  flex: auto;
+  align-self: center;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  text-decoration: none;
+}
+
+.logo img {
   margin: 0 17px;
   height: 50px;
-  border-radius: 50%;
+  align-self: center;
 }
 
-#navbar-title p {
-  display: inline-block;
-  vertical-align: top;
-  color: black;
+.logo p {
   font-family: var(--post-header-font-family);
   font-size: 18px;
+  color: black;
+  align-self: center;
 }
