@@ -78,7 +78,7 @@ class PostPage extends React.Component {
       inlineMath: ({value}) => <Tex math={value} />,
       math: ({value}) => <Tex block math={value} />,
       code: ({language, value}) => {
-        return <SyntaxHighlighter style={prism} language={language.toLowerCase()} children={value} />
+        return <SyntaxHighlighter style={prism} language={language ? language.toLowerCase() : language} children={value} />
       }
     };
 
