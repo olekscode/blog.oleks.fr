@@ -1,11 +1,12 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
-import gfm from 'remark-gfm';
-import math from 'remark-math';
-import Tex from '@matejmazur/react-katex';
-import 'katex/dist/katex.min.css';
-import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
-import { prism } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
+import remarkGmf from 'remark-gfm';
+import remarkMath from 'remark-math';
+import rehypeMathjax from 'rehype-mathjax'
+import rehypeStringify from 'rehype-stringify'
+
 import $ from "jquery";
 
 import './style.css';
@@ -14,6 +15,9 @@ import * as URLS from '../../constants/blogUrls';
 import PostHeader from './PostHeader';
 import PostFooter from './PostFooter';
 import PostNotFoundPage from '../PostNotFound';
+
+import highlightCode from '../../util/CodeHighlighter';
+
 
 const getContentsOfFileFromURL = url => {
   var result = null;
@@ -38,61 +42,53 @@ const loadPostMarkdown = postId =>
 const loadPostMetadata = postId =>
   loadMetadataOfAllPosts().find(post => post.id === postId);
 
-const loadMetadataOfAllPosts = () =>
+export const loadMetadataOfAllPosts = () =>
   getJsonFromURL(URLS.POSTS_METADATA_FILE);
 
+const preprocessPostMarkdown = (markdown, postId) => {
+  markdown = removeFirstHeader(markdown);
+  markdown = fixRelativeImagePaths(markdown, postId);
+  return markdown;
+};
 
-class PostPage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.id = props.match.params.postId;
-    console.log(`Displaying post ${this.id}`);
-  }
+const removeFirstHeader = (html) => {
+  // First # header is a title of the post. We will replace it with our own
+  // custom title block - with title, date, author, etc.
+  return html.replace(/^#\s(.+)/, '');
+};
 
-  preprocessPostMarkdown(markdown) {
-    markdown = this.removeFirstHeader(markdown);
-    markdown = this.fixRelativeImagePaths(markdown);
-    return markdown;
-  }
+const fixRelativeImagePaths = (markdown, postId) => {
+  return markdown.replace(/(!\[.*?\]\()/g, `$1${URLS.POSTS_FOLDER}/${postId}/`);
+};
 
-  removeFirstHeader(html) {
-    // First # header is a title of the post. We will replace it with our own
-    // custom title block - with title, date, author, etc.
-    return html.replace(/^#\s(.+)/, '');
-  }
 
-  fixRelativeImagePaths(markdown) {
-    return markdown.replace(/(!\[.*?\]\()/g, `$1${URLS.POSTS_FOLDER}/${this.id}/`);
-  }
+export default function PostPage() {
 
-  render() {
-    const metadata = loadPostMetadata(this.id);
+  let { id } = useParams();
 
-    if (metadata === undefined)
-      return <PostNotFoundPage id={this.id} />;
+  const metadata = loadPostMetadata(id);
 
-    var markdown = loadPostMarkdown(this.id);
-    markdown = this.preprocessPostMarkdown(markdown);
+  if (metadata === undefined)
+    return <PostNotFoundPage id={id} />;
 
-    const renderers = {
-      inlineMath: ({value}) => <Tex math={value} />,
-      math: ({value}) => <Tex block math={value} />,
-      code: ({language, value}) => {
-        return <SyntaxHighlighter style={prism} language={language ? language.toLowerCase() : language} children={value} />
-      }
-    };
+  var markdown = loadPostMarkdown(id);
+  markdown = preprocessPostMarkdown(markdown, id);
 
-    return(
-      <div>
-        <PostHeader title={metadata.title} date={metadata.datePublished} />
-        <div id='post-content' class='container'>
-          <ReactMarkdown plugins={[math,gfm]} renderers={renderers} children={markdown} />
-        </div>
-        <PostFooter />
+  const markdownComponents = {
+    code: highlightCode
+  };
+
+  return(
+    <div>
+      <PostHeader title={metadata.title} date={metadata.datePublished} />
+      <div id='post-content' className='container'>
+        <ReactMarkdown
+          remarkPlugins={[remarkGmf,remarkMath]}
+          rehypePlugins={[rehypeMathjax,rehypeStringify]}
+          components={markdownComponents}
+          children={markdown} />
       </div>
-    )
-  }
+      <PostFooter />
+    </div>
+  )
 }
-
-export { loadMetadataOfAllPosts };
-export default PostPage;

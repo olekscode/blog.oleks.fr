@@ -13,7 +13,7 @@ class PostHeader extends React.Component {
   render() {
     return (
       <div id='post-header'>
-        <div class='container'>
+        <div className='container'>
           <h1>{this.title}</h1>
           <div id='date-published'>{this.date} &#9472; 5 min read</div>
           <hr/>

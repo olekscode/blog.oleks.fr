@@ -1,0 +1,22 @@
+:root {
+  /* --highlight-color: #37394e; */
+  --highlight-color: #fffee9;
+}
+
+/* code {
+  transform: translateZ(0);
+  min-width: 100%;
+  float: left;
+} */
+
+/* code>span {
+  display: block;
+} */
+
+h3 code {
+  color: inherit;
+}
+
+[data="highlight"] {
+  background: var(--highlight-color);
+}

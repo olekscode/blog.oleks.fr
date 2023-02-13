@@ -18,11 +18,11 @@ class PostListPage extends React.Component {
       post.draft === this.isForDrafts);
 
     const posts = postsMetadata.map(post =>
-      <li><a href={post.id}>{post.title}</a></li>
+      <li key={post.id}><a href={post.id}>{post.title}</a></li>
     );
 
     return (
-      <div class='container'>
+      <div className='container'>
         <h1>{this.isForDrafts ? 'Drafts' : 'My Posts'}</h1>
         <ul id='list-of-posts'>{posts}</ul>
       </div>

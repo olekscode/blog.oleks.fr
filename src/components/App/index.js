@@ -2,7 +2,7 @@ import React from 'react';
 import {
 	BrowserRouter as Router,
 	Route,
-  Switch
+	Routes
 } from 'react-router-dom';
 
 import Navigation from '../Navigation';
@@ -18,13 +18,11 @@ const App = () => (
 			  <Navigation />
       </header>
       <article>
-        <Switch>
-          <Route exact path={ROUTES.LANDING} component={PostListPage} />
-					<Route exact path={ROUTES.DRAFT_LIST}>
-						<PostListPage drafts="true" />
-					</Route>
-					<Route exact path={'/:postId'} component={PostPage} />
-        </Switch>
+        <Routes>
+        	<Route exact path={ROUTES.LANDING} element={ <PostListPage/> } />
+			    <Route exact path={ROUTES.DRAFT_LIST} element={ <PostListPage drafts="true" /> } />
+          <Route exact path={'/:id'} element={ <PostPage/> } />
+        </Routes>
       </article>
 		</div>
 	</Router>
